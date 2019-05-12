@@ -1,0 +1,3 @@
+D:\Projects\2019-05-02_MoteurDeRecherche\MoteurDeRecherche\obj\Debug\MoteurDeRecherche.njsprojAssemblyReference.cache
+D:\Projects\2019-05-02_MoteurDeRecherche\MoteurDeRecherche\obj\Debug\MoteurDeRecherche.njsproj.CoreCompileInputs.cache
+D:\Projects\2019-05-02_MoteurDeRecherche\MoteurDeRecherche\bin\Microsoft.NodejsTools.WebRole.dll

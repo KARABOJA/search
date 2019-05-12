@@ -1,11 +1,12 @@
 'use strict';
-
+//const url = require('Url');
 const path = require('path');
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Chargement des variable d'environement
 require('dotenv').config();
 
+const crawler12 = require('./src/services/crawler');
 const _ = require('lodash');
 const logger = require('./src/libs/logger');
 const http = require('http');
@@ -56,6 +57,7 @@ app.use(bodyParser.urlencoded({
 app.use(require('./src/routes'));
 
 // Create server
+//process.env.PORT = 3000;
 const server = http.createServer(app).listen(process.env.PORT, function() {
   logger.info('Lancement du moteur de recherche' + process.env.PORT + ' in ' + app.get('env') + ' mode');
 });
@@ -63,6 +65,11 @@ const server = http.createServer(app).listen(process.env.PORT, function() {
 // Compression
 app.use(compression());
 
+/**
+const myURL = new URL( url.parse('https://google.fr'));
+const test = crawler12.test2(myURL);
+console.log(test);
+ */
 /**
  * Graceful shutdown
  * @returns {*|void}
