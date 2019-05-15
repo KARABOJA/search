@@ -3,6 +3,8 @@
 const path = require('path');
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
+//const routes = require('./routes')
+
 // Chargement des variable d'environement
 require('dotenv').config();
 
@@ -53,7 +55,16 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// Router
+
+//const routes = require('./routes')
+
+//// Set the default views directory to html folder
+//app.set('views', path.join(__dirname, 'html'))
+
+//// Set the view engine to ejs
+//app.set('view engine', 'ejs')
+
+//// Router
 app.use(require('./src/routes'));
 
 // Create server

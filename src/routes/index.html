@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    const sql = require('mssql');
+
+    var sqlConfig = {
+        user: 'SQLUser2018/2019',
+        password: 'SQLPassword2018/2019',
+        server: 'DESKTOP-8KKDFL5',
+        database: 'dbSearchEngine',
+        port: 1433,
+        dialect: "mssql",
+        dialectOptions: "MSSQLSERVER"
+    };
+
+    async function connect() {
+        await sql.connect(sqlConfig)
+    }
+
+    connect();
+    var name = "<%= recherche %>";
+    function listeUrl() {
+        
+        var request = new sql.Request();
+        var requette = "select UidUrl from tbMetadatas where Value like 'viewport'";
+        request.query(requette, function (err, recordset) {
+            if (err) { console.log("ko"); }
+            else { console.log("ko"); }
+            //for (var i = 0, len = recordset.length; i < len; i++) {
+            //    document.getElementById("Resultats").innerHTML = document.getElementById("Resultats").innerHTML + recordset[i] + "<br \>";
+            //}
+        });
+    
+        document.getElementById("resultats").innerHTML = name;
+
+    }
+
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AD Search Engine</title>
+</head>
+
+<body>
+    <p align="center"><strong><font size=20>AD SEARCH ENGINE</font></strong></p>
+    <form name="form1" action="/">
+        <div align="center">
+            <input id="Recherche" type="text" name="Recherche" placeholder="Ta recherche ici..."><input type="submit" value="Rechercher..." OnClick="listeUrl()">
+        </div>
+    </form>
+    <div id="resultats">
+    </div>
+
+</body>
+</html>
